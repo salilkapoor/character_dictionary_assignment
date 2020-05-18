@@ -8,7 +8,8 @@
     "dev": "next",
     "build": "next build",
     "start": "nodemon server.js",
-    "test": "jest --watchAll",
+    "test": "npx jest --coverage",
+    "test:watch": "npx jest --watchAll",
     "commit": "npx git-cz"
   },
   "dependencies": {
