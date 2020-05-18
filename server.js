@@ -1,0 +1,38 @@
+/* eslint-disable */
+const express = require('express');
+const next = require('next');
+
+const PORT = process.env.PORT || 3000;
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+
+const handle = app.getRequestHandler();
+
+const proxy = {
+  '/api': {
+    target: 'https://rickandmortyapi.com/api/character/',
+    pathRewrite: { '^/api': '/' },
+    changeOrigin: true
+  }
+};
+
+app
+  .prepare()
+  .then(() => {
+    const server = express();
+    const proxyMiddleware = require('http-proxy-middleware');
+    
+    server.use(proxyMiddleware('/api', proxy['/api']));
+
+    // Default catch-all handler to allow Next.js to handle all other routes
+    server.all('*', (req, res) => handle(req, res));
+
+    server.listen(PORT, err => {
+      if (err) throw err;
+      console.log(`> Ready on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.log('An error occurred, unable to start the server');
+    console.log(err);
+  });
