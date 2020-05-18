@@ -9,5 +9,14 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest'
   },
-  transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$']
+  transformIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
+  coverageReporters: ["text", "json", "lcov", "json-summary", "text-summary"],
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 3,
+      lines: 3,
+      statements: 0.7
+    }
+  }
 };
