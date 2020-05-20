@@ -10,7 +10,7 @@ jobs:
     name: Deploy to heroku
     if: branch = develop || master
     before_deploy:
-    - yarn start
+    - yarn build
     deploy:
       skip_cleanup: true
       provider: heroku
