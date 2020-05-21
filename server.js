@@ -8,7 +8,15 @@ const app = next({ dev });
 
 const handle = app.getRequestHandler();
 
-const proxy = {
+const devProxy = {
+  '/api': {
+    target: 'https://rickandmortyapi.com/api/character/',
+    pathRewrite: { '^/api': '/' },
+    changeOrigin: true
+  }
+};
+
+const prodProxy = {
   '/api': {
     target: 'https://rickandmortyapi.com/api/character/',
     pathRewrite: { '^/api': '/' },
@@ -20,9 +28,13 @@ app
   .prepare()
   .then(() => {
     const server = express();
+
     const proxyMiddleware = require('http-proxy-middleware');
-    
-    server.use(proxyMiddleware('/api', proxy['/api']));
+    if (dev && devProxy) {
+      server.use(proxyMiddleware('/api', devProxy['/api']));
+    } else {
+      server.use(proxyMiddleware('/api', prodProxy['/api']));
+    }
 
     // Default catch-all handler to allow Next.js to handle all other routes
     server.all('*', (req, res) => handle(req, res));
