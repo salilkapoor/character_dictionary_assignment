@@ -8,7 +8,7 @@
     "dev": "next",
     "build": "next build",
     "start": "nodemon server.js",
-    "build:start": "next start",
+    "build:start": "next start -p $PORT",
     "test": "npx jest --coverage",
     "test:watch": "npx jest --watchAll",
     "commit": "npx git-cz"
