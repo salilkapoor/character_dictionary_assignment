@@ -8,7 +8,7 @@ jobs:
     - yarn test
   - stage: deploy
     name: Deploy to heroku
-    if: branch = develop || master
+    if: branch = master
     before_deploy:
     - yarn build
     deploy:
@@ -16,9 +16,8 @@ jobs:
       provider: heroku
       app:
         master: character-dictionary
-        develop: character-dictionary
       on:
         repo: salilkapoor/character_dictionary_assignment
         all_branches: true
       api_key:
-        secure: BSd1jTjLw1h1RD0yQfOBiy1cembJEAuxEDqOY6b/ovmL/lF83LUfomzzIVq6TL1r3ZUdqhiAIbszCgZb3/2XM4y2lY32MC9XMp8jVAUP0sz7yX2eDr4pfT/bqWsHgT5lwLOi/sBb1CVPOs+y6Exugo/KoC3y9ODSAgP7Ml2aovtG87GbhjHqe7h/nRGBRDoSFtXnfHDlYLUK8zGt9FIHxyYOReQ7kEngwPM4EQw1eUC2T3zB5201NstxLez2b5mkrMjhqXrUB+YKB3z7Amkm6R5aZVYYWyKaCpuhM1uPfBP5DErpJWjrKNICERlga1Hl2iuL1NuKGbP6pBfL2qlaQPU6sfXktXOzb15h7FC1Wbb4nb0vuhwR+RfrxPKhLM1KMiKMnYoCsl4ouOwv29qrv8lLTe6erGqsEzONZ14yAi05LQDc47GSPxgBIrxk69LfF2visyEvix8DLaZUpRUI1DKs+bpfkBg5xfTj1ZiInClIWwb9mKO19130ky2mJQXFg3QW+4lrr70WZINqiw+1QvOI5M/VfYPSHS4LqcnikFaHU8OO5jhQt/S4+mQ5tIsgxnJVgU+uH5JI8IO4w6owuKZ6Ec27ti2sNsi2VgP5HpnsU8II13B3JKn7zLsJcKaK0SWF9tYzKiBbiMUdFBIpXtbHMyOOaJBZILmwGK80oME=
+        secure: lYcPdMsmz+eYeZWY6YAbZa2bMgRmX8LutZEf3KA/ofQk79JJXQz/WlMQRIj/l4C9lzHiZWTIUKLnylVXro8+wGlP1v8Vv1N2SYUZim/dBNF2onroCfvGP5uZRC95nlUbvN2+MfFWxy1rM7D/mdEqty9KVnUnqtv8fRC6xFhUwVPZL1CJ2beVLJORuvyH+jXb0bcRBMrCkwp29Lq6OKRL+X79LE5FTGf5dl4U0dYCwzMN/gxDymz3bwWUgBlXk35ZrlOSy4kx/in7qH5zw9ftEUdibpuFYPDsi7WzKsjN+gu37aabF5vAv0Fxb9DypFv/g1p5E/FcARwNEVykzUhMX/F385MPTEdykFHlPI+QnBAKxQNPiAfsxVeGJh7jvoChmYSip+82gOLywudXxRSQZMtCpwnXb37tAgZVJGFMz4aeWKImCI8rSeorpxwMNZcnyQueudZTsvITNPkv9jJCIVA6KL+w2ggljB6X6+2SCUz9lfY/ekZHKPMfyynoq8Y1HHfwsXVub6+WvL3Z5+x7K4RJIe1vUifND5N1bnAxamepnq8A8yQRpUxf79O+jzJsd9hOJLjiat5zwj5vYN819GHkGSh27lzET1fV/YkbACrRX16Nb75owWmxGJyt+kGVhRFiw1XThoNZPBnTIRs9tQFJO+tomfIP+6BAVVKarmM=
