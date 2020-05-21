@@ -21,4 +21,7 @@ jobs:
         all_branches: true
       api_key:
         secure: sA5eNM2QeE1kn5TophwvzRMAWJIzL/4IVEIPHZQyhV1XkaA5xmNq85q0uq64Sf3lTrwfi9kq9KW2YPclZM4CwQzMA+xvMnm+ukGVfmnWSFo3vwCb+buQSMQVDwVarw72X3dRWngqY9g8h9SacunH65gNkMHFUxIkXP/eGuUgUKSdQETTT72OBtqG86x265S756G1LnhqraRfUIhWdzqglc4hbwrKYK3nXwDhlM1IVV6qzmfiCNuxEHpcbQUHj6RiCm/9Iu9GPO14as6sUK1uICd2pnmNIf1J8CMo1Nab4l163qP0GFyRadr8JxHpCF8XyQlx2uWnne0+muK+38MnsmLiq/NB7w8gKlWYXrOvzlGCzi2J7ukyDOBut3Uyr6Rrrv9gafKJU1WUKWndNL8E5xszB1/6whStsxSHXO2v6WWzKbAJ+O6LuzNiFRZSud5xNTMJ55uybjzFS/C8c0pKO7hcOftL1filSgxzcn7ZpXGO9Bh0Y3rqtpLyAMWKtHP8a8WBU7G2EpHcgZ0RmdK8fRHzAwfDT/RJ4TOwIaI8AkP8JASc3wTVG6w0EZHZCcM2yGgQspw6rNHlfBkxZVOASDA3hCbGZiH2+qeKP/L+lzyogU0GlPFBd5X9iEwDIbUMq+DxrTd/xc1c8u9I39fkqPaEbTf5FuaHXaEj9IM63yU=
+    after_deploy:
+    - yarn build:start
+
 

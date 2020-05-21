@@ -8,6 +8,7 @@
     "dev": "next",
     "build": "next build",
     "start": "nodemon server.js",
+    "build:start": "node server.js",
     "test": "npx jest --coverage",
     "test:watch": "npx jest --watchAll",
     "commit": "npx git-cz"
