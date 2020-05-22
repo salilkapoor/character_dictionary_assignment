@@ -1,0 +1,24 @@
+@import "../../../../styles/index.scss";
+
+.description-list {
+    background: $list-background-color;
+    padding: rem(5px);
+    font-size: rem(12px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    padding: rem(5px);
+    dt,
+    dd {
+        padding: rem(5px);
+    }
+    dt {
+        place-self: center stretch;
+        text-transform: uppercase;
+    }
+    dd {
+        place-self: center flex-end;
+        text-align: end;
+        color: $color-definition;
+    }
+}

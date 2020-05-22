@@ -1,13 +1,14 @@
-@import '../../../styles/index.scss';
+@import "../../../styles/index.scss";
 
 .characters-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: $characters-list;
+
   color: $color-white;
-  gap: 10px;
+  gap: rem(5px);
   &__character {
-    background: $list-background-color;
+    background-color: $characters-list;
+    padding: rem(5px);
   }
 }
 
@@ -15,5 +16,6 @@
   .characters-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
   }
 }

@@ -1,27 +1,15 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+
+import './styles.scss';
 
 const Character = ({ character }) => {
   const {
-    name,
-    species,
-    status,
-    location,
-    gender,
-    created,
-    id,
-    origin
+    species, status, location, gender, origin
   } = character;
 
   return (
-    <dl>
-      <dt>Name</dt>
-      <dd>{name}</dd>
-      <dt>id</dt>
-      <dd>{id}</dd>
-      <dt>created</dt>
-      <dd>{created}</dd>
+    <dl className="description-list">
       <dt>status</dt>
       <dd>{status}</dd>
       <dt>species</dt>
