@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import Dashboard from '../src/components/organisms/Dashboard';
+import RenderApp from '../src';
 
 const Hello = styled.h1`
   color: teal;
@@ -19,7 +19,7 @@ export const Index = () => (
       />
     </Head>
     <Hello>Hello World!</Hello>
-    <Dashboard />
+    <RenderApp />
   </>
 );
 

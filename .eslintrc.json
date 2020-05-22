@@ -5,11 +5,12 @@
     "jest": true,
     "node": true
   },
-  "extends": "airbnb",
+  "extends": ["airbnb"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -20,6 +21,8 @@
   "plugins": ["react"],
   "rules": {
     "comma-dangle": ["error", "never"],
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "windows"],
+    "max-len": "warn",
+    "import/prefer-default-export": "off"
   }
 }
