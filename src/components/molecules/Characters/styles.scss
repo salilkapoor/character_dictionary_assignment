@@ -1,4 +1,19 @@
+@import '../../../styles/index.scss';
+
 .characters-list {
-  margin: 0;
-  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $characters-list;
+  color: $color-white;
+  gap: 10px;
+  &__character {
+    background: $list-background-color;
+  }
+}
+
+@include sm-device-type {
+  .characters-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
