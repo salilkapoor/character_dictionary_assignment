@@ -4,6 +4,7 @@ import FilteredList from '../../molecules/FilteredList';
 import Characters from '../../molecules/Characters';
 import Filters from '../../molecules/Filters';
 import Search from '../../molecules/Search';
+import Sort from '../../atoms/Sort';
 import { useFetch } from '../../../hooks';
 import { AppContext } from '../../../context';
 
@@ -35,6 +36,7 @@ const Dashboard = () => {
       <Filters />
       <FilteredList />
       <Search />
+      <Sort />
       <Characters />
     </>
   );
