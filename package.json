@@ -9,9 +9,10 @@
     "build": "next build",
     "start": "nodemon server.js",
     "build:start": "next start -p $PORT",
-    "test": "npx jest --coverage",
+    "test": "yarn run lint:fix && npx jest --coverage",
     "test:watch": "npx jest --watchAll",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",

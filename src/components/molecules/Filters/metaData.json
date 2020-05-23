@@ -1,0 +1,7 @@
+{
+  "filters": {
+    "species": ["Human", "Mytholog", "Alien"],
+    "gender": ["Male", "Female"],
+    "origin": ["Unknown", "Nuptia 4", "Post-Apocalyptic Earth"]
+  }
+}

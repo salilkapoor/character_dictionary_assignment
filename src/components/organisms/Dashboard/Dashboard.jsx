@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 
 import FilteredList from '../../molecules/FilteredList';
 import Characters from '../../molecules/Characters';
+import Filters from '../../molecules/Filters';
 import { useFetch } from '../../../hooks';
 import { AppContext } from '../../../context';
 
@@ -25,11 +26,12 @@ const Dashboard = () => {
   }
 
   if (error) {
-    return <p>Error Occured while Fetching Data...</p>;
+    return <p>Error Occurred while Fetching Data...</p>;
   }
 
   return (
     <>
+      <Filters />
       <FilteredList />
       <Characters />
     </>
