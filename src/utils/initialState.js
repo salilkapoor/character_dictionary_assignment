@@ -1,4 +1,5 @@
 export const initialState = {
-  filteredList: null,
-  data: null
+  filters: [],
+  data: null,
+  unFilteredData: null
 };

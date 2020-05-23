@@ -1,22 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-const Checkbox = ({ name, value }) => (
-  <>
-    <label htmlFor={value}>
-      <input
-        type="checkbox"
-        id={value}
-        name={name}
-        value={value}
-        onChange={(e) => {
-          console.log(e.target.value, e.target.name);
-        }}
-      />
-      {value}
-    </label>
-  </>
-);
+import { AppContext } from '../../../context';
+
+import { FILTER_SELECTED } from '../../../utils/actions.json';
+
+const Checkbox = ({ name, value }) => {
+  const { dispatch } = useContext(AppContext);
+
+  return (
+    <>
+      <label htmlFor={value}>
+        <input
+          type="checkbox"
+          id={value}
+          name={name}
+          value={value}
+          onChange={(e) => {
+            dispatch({
+              type: FILTER_SELECTED,
+              filters: [
+                e.target.name,
+                e.target.value,
+                e.target.checked
+              ]
+            });
+          }}
+        />
+        {value}
+      </label>
+    </>
+  );
+};
 
 Checkbox.propTypes = {
   name: PropTypes.string.isRequired,

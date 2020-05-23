@@ -18,8 +18,8 @@ const FilteredList = () => {
   return (
     <>
       <Heading type="h2">Selected Filters</Heading>
-      {store?.filteredList
-        ? _selectedList(store.filteredList)
+      {store?.filters.length > 0
+        ? _selectedList(store.filters)
         : 'No Filters Selected'}
     </>
   );
