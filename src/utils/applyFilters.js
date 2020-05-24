@@ -32,3 +32,35 @@ export function searchByName(data, keyword) {
     item.name.includes(keyword)
   ));
 }
+
+function _compareD(a, b) {
+  const idA = a.id;
+  const idB = b.id;
+
+  let comparison = 0;
+  if (idA < idB) {
+    comparison = 1;
+  } else if (idA > idB) {
+    comparison = -1;
+  }
+
+  return comparison;
+}
+
+function _compareA(a, b) {
+  const idA = a.id;
+  const idB = b.id;
+
+  let comparison = 0;
+  if (idA > idB) {
+    comparison = 1;
+  } else if (idA < idB) {
+    comparison = -1;
+  }
+
+  return comparison;
+}
+
+export function sortByID(res, dir) {
+  return dir === 'A' ? res.sort(_compareA) : res.sort(_compareD);
+}
