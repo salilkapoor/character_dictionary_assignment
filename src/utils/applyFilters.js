@@ -1,9 +1,28 @@
-export function applyFilters(data, filters) {
-  return data.filter((item) => item[filters[0]] === filters[1]);
+function _getFilteredData(data, type, typeVal) {
+  return data.filter((item) => item[type] === typeVal);
+}
+
+export function applyFilters(data, appliedFilters) {
+  let filteredData = [...data];
+  appliedFilters.forEach((({ type, typeVal }) => {
+    const dItem = _getFilteredData(filteredData, type, typeVal);
+    filteredData = [];
+    filteredData.push(...dItem);
+  }));
+
+  return filteredData;
 }
 
 export function updateFilters(filteredList, filters) {
-  if (filters[2]) { filteredList.push(filters[1]); return filteredList; }
-  filteredList.splice(filteredList.indexOf(filters[1]), 1);
+  if (filters[2]) {
+    const tempObj = { type: filters[0], typeVal: filters[1] };
+    filteredList.push(tempObj);
+    return filteredList;
+  }
+  const indexOfFilter = filteredList.findIndex(
+    ({ type, typeVal }) => (type === filters[0] && typeVal === filters[1])
+  );
+  filteredList.splice(indexOfFilter, 1);
+
   return filteredList;
 }

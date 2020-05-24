@@ -1,5 +1,5 @@
 export const initialState = {
-  filters: [],
+  appliedFilters: [],
   data: null,
   unFilteredData: null
 };
