@@ -1,6 +1,27 @@
+@import "../../../styles/index.scss";
+
 .dashboard {
-    &__search-sort-wrapper {
+    padding: rem(10px);
+    &__content {
+        &__search-sort-wrapper {
+            display: flex;
+            flex-flow: column;
+        }
+    }
+}
+
+@include sm-device-type {
+    .dashboard {
         display: flex;
-        flex-flow: column;
+        &__filters {
+            margin-right: rem(20px);
+        }
+        &__content {
+            &__search-sort-wrapper {
+                flex-flow: row;
+                justify-content: space-between;
+                margin-bottom: rem(16px);
+            }
+        }
     }
 }

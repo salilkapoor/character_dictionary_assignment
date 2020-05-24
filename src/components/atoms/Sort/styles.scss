@@ -3,3 +3,11 @@
 .sort {
     margin: rem(20px) 0;
 }
+
+@include sm-device-type {
+    .sort {
+        margin: 0;
+        align-self: flex-end;
+        padding: rem(5px);
+    }
+}

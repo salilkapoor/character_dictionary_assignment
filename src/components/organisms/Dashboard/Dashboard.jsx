@@ -34,15 +34,19 @@ const Dashboard = () => {
   }
 
   return (
-    <>
-      <Filters />
-      <FilteredList />
-      <div className="dashboard__search-sort-wrapper">
-        <Search />
-        <Sort />
-      </div>
-      <Characters />
-    </>
+    <main className="dashboard">
+      <aside className="dashboard__filters">
+        <Filters />
+      </aside>
+      <section className="dashboard__content">
+        <FilteredList />
+        <div className="dashboard__content__search-sort-wrapper">
+          <Search />
+          <Sort />
+        </div>
+        <Characters />
+      </section>
+    </main>
   );
 };
 
