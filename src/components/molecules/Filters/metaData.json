@@ -2,6 +2,10 @@
   "filters": {
     "species": ["Human", "Mytholog", "Alien"],
     "gender": ["Male", "Female"],
-    "origin": ["Unknown", "Nuptia 4", "Post-Apocalyptic Earth"]
+    "origin": [
+      "unknown",
+      "Earth (Replacement Dimension)",
+      "Earth (C-137)"
+    ]
   }
 }

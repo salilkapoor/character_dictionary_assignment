@@ -1,0 +1,19 @@
+@import "../../../styles/index.scss";
+
+.filter {
+    display: flex;
+    flex-flow: column;
+    border: 1px solid $characters-list;
+    padding: rem(10px);
+    margin-bottom: rem(20px);
+    &__heading {
+        text-transform: capitalize;
+        margin: rem(5px) 0;
+    }
+    label {
+        margin: rem(5px) 0;
+    }
+    input {
+        margin-right: rem(5px);
+    }
+}

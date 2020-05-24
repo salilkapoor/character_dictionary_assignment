@@ -1,0 +1,17 @@
+@import "../../../styles/index.scss";
+
+.search {
+    display: flex;
+    flex-flow: wrap;
+    &__label {
+        flex: 0 0 100%;
+        margin: rem(20px) 0 rem(5px) 0;
+    }
+    &__input {
+        flex: 0 0 80%;
+    }
+    &__button {
+        flex: 0 0 20%;
+        padding: rem(5px);
+    }
+}

@@ -11,6 +11,8 @@ import { AppContext } from '../../../context';
 import { DEV } from '../../../../config/connections.json';
 import { UPDATE_DATA } from '../../../utils/actions.json';
 
+import './styles.scss';
+
 const Dashboard = () => {
   const { loading, error, data } = useFetch(DEV);
   const { dispatch } = useContext(AppContext);
@@ -35,8 +37,10 @@ const Dashboard = () => {
     <>
       <Filters />
       <FilteredList />
-      <Search />
-      <Sort />
+      <div className="dashboard__search-sort-wrapper">
+        <Search />
+        <Sort />
+      </div>
       <Characters />
     </>
   );

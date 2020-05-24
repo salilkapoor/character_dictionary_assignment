@@ -6,6 +6,8 @@ import { AppContext } from '../../../context';
 
 import { CLEAR_FILTER } from '../../../utils/actions.json';
 
+import './styles.scss';
+
 function _selectedList(filters, dispatch) {
   function _removeHandler(e) {
     const tempArr = e.target.id.split('-');
@@ -21,6 +23,7 @@ function _selectedList(filters, dispatch) {
       key={`${type}-${typeVal}`}
       id={`${type}-${typeVal}`}
       type="default"
+      className="selected-filters__button"
       clicked={(e) => _removeHandler(e)}
     >
       {typeVal}
@@ -33,7 +36,9 @@ const FilteredList = () => {
 
   return (
     <>
-      <Heading type="h2">Selected Filters</Heading>
+      <Heading type="h2" className="selected-filters__heading">
+        Selected Filters
+      </Heading>
       {store?.appliedFilters.length > 0
         ? _selectedList(store?.appliedFilters, dispatch)
         : 'No Filters Selected'}
