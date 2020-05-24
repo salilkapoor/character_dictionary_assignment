@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({
-  className, id, changed, children
+  className, id, clicked, children
 }) => React.createElement(
   'button',
   {
-    type: 'button', className, id, onClick: changed
+    type: 'button', className, id, onClick: clicked
   },
   children
 );
@@ -14,13 +14,13 @@ const Button = ({
 Button.defaultProps = {
   className: '',
   id: null,
-  changed: null
+  clicked: null
 };
 
 Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.string.isRequired,
-  changed: PropTypes.func,
+  clicked: PropTypes.func,
   id: PropTypes.string
 };
 

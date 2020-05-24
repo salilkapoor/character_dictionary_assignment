@@ -21,7 +21,7 @@ function _selectedList(filters, dispatch) {
       key={`${type}-${typeVal}`}
       id={`${type}-${typeVal}`}
       type="default"
-      changed={(e) => _removeHandler(e)}
+      clicked={(e) => _removeHandler(e)}
     >
       {typeVal}
     </Button>

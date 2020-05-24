@@ -26,3 +26,9 @@ export function updateFilters(filteredList, filters) {
 
   return filteredList;
 }
+
+export function searchByName(data, keyword) {
+  return data.filter((item) => (
+    item.name.includes(keyword)
+  ));
+}

@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ className }) => (
+const Input = ({ className, changed }) => (
   React.createElement(
     'input',
-    { type: 'text', className }
+    { type: 'text', className, onChange: changed }
   )
 );
 
 Input.defaultProps = {
-  className: ''
+  className: '',
+  changed: null
 };
 
 Input.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  changed: PropTypes.func
 };
 
 export default Input;
