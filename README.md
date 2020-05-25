@@ -28,4 +28,8 @@ CI/CD - Travis
 ### Heroku Deployment
 https://character-dictionary.herokuapp.com/
 
+### Local Development
 The app will run at `http://localhost:3000`
+
+## Issue Tracking
+https://github.com/salilkapoor/character_dictionary_assignment/issues
