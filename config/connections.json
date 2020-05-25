@@ -1,4 +1,4 @@
 {
-    "DEV": "/api",
-    "DEFAULT": "https://rickandmortyapi.com/api/character/"
+    "development": "/api",
+    "production": "https://rickandmortyapi.com/api/character/"
 }
