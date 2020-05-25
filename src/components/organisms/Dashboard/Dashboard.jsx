@@ -8,13 +8,13 @@ import Sort from '../../atoms/Sort';
 import { useFetch } from '../../../hooks';
 import { AppContext } from '../../../context';
 
-import { DEV } from '../../../../config/connections.json';
+import { DEV, DEFAULT } from '../../../../config/connections.json';
 import { UPDATE_DATA } from '../../../utils/actions.json';
 
 import './styles.scss';
 
 const Dashboard = () => {
-  const { loading, error, data } = useFetch(DEV);
+  const { loading, error, data } = useFetch(DEV ?? DEFAULT);
   const { dispatch } = useContext(AppContext);
   // eslint-disable-next-line no-console
   // console.log(loading, error, data);
